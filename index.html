@@ -37,22 +37,39 @@ body{
   border-left:6px solid var(--accent);
   box-shadow:0 4px 12px rgba(0,0,0,0.08);
 
+  /* animasi masuk */
   opacity:0;
   transform:translateY(20px);
   animation:fadeUp 0.6s ease forwards;
+
+  /* smooth transition */
+  transition: all 0.3s ease;
 }
 
+/* delay biar muncul satu-satu */
 .card:nth-child(1){animation-delay:0.1s;}
 .card:nth-child(2){animation-delay:0.2s;}
 .card:nth-child(3){animation-delay:0.3s;}
 .card:nth-child(4){animation-delay:0.4s;}
 .card:nth-child(5){animation-delay:0.5s;}
 
+/* animasi masuk */
 @keyframes fadeUp{
   to{
     opacity:1;
     transform:translateY(0);
   }
+}
+
+/* 🔥 EFEK TIMBUL */
+.card:hover{
+  transform:translateY(-8px) scale(1.02);
+  box-shadow:0 12px 25px rgba(0,0,0,0.15);
+}
+
+/* efek ditekan (HP) */
+.card:active{
+  transform:scale(0.97);
 }
 
 /* HEADER */
@@ -69,8 +86,15 @@ body{
   border-radius:50%;
   object-fit:cover;
   border:3px solid var(--accent-soft);
+  transition:.3s;
 }
 
+/* foto ikut hidup */
+.photo:hover{
+  transform:scale(1.05);
+}
+
+/* TEXT */
 h1{
   margin:0;
   font-size:1.4rem;
@@ -98,7 +122,8 @@ h1{
 }
 
 .btn:hover{
-  opacity:0.85;
+  transform:scale(1.05);
+  box-shadow:0 5px 12px rgba(0,0,0,0.2);
 }
 
 /* JUDUL */
@@ -124,6 +149,11 @@ ul{
   padding:5px 10px;
   border-radius:20px;
   font-size:.8rem;
+  transition:.2s;
+}
+
+.skill:hover{
+  transform:scale(1.1);
 }
 
 /* RESPONSIVE */
